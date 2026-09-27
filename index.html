@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aegis Senior Fraud Defense | Free Elder Fraud Protection</title>
+  <meta name="description" content="A free, on-device community utility to help older adults and caregivers scan suspicious mail, identify fraud triggers, and compile intake-ready case dossiers." />
+  <style>
+    :root {
+      --primary-navy: #0F2C59;
+      --navy-dark: #0A1C38;
+      --accent-gold: #D4AF37;
+      --bg-light: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text-dark: #1E293B;
+      --text-muted: #64748B;
+      --high-contrast-bg: #000000;
+      --high-contrast-text: #FFFF00;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Accessibility Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent-gold);
+      color: #000;
+      padding: 8px;
+      z-index: 100;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--primary-navy) 100%);
+      color: #FFFFFF;
+      padding: 3rem 1.5rem 4rem;
+      text-align: center;
+      border-bottom: 4px solid var(--accent-gold);
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: rgba(212, 175, 55, 0.15);
+      color: var(--accent-gold);
+      border: 1px solid var(--accent-gold);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .subhead {
+      font-size: 1.35rem;
+      color: #E2E8F0;
+      max-width: 680px;
+      margin: 0 auto 1.5rem;
+      font-weight: 400;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #94A3B8;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Download Buttons */
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.75rem;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-google {
+      background-color: #FFFFFF;
+      color: var(--primary-navy);
+      border: 2px solid #FFFFFF;
+    }
+    .btn-google:hover {
+      background-color: #F1F5F9;
+    }
+
+    .btn-apple {
+      background-color: transparent;
+      color: #FFFFFF;
+      border: 2px solid var(--accent-gold);
+    }
+    .btn-apple:hover {
+      background-color: rgba(212, 175, 55, 0.1);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    /* Section Headings */
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin-bottom: 2.5rem;
+    }
+
+    /* 3-Step Grid */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: var(--primary-navy);
+      color: var(--accent-gold);
+      font-weight: 800;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .step-card h3 {
+      font-size: 1.25rem;
+      color: var(--primary-navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .step-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Feature Highlights (Accessibility & Intake) */
+    .features-panel {
+      background: #FFFFFF;
+      border: 2px solid var(--accent-gold);
+      border-radius: 12px;
+      padding: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .features-panel h2 {
+      color: var(--primary-navy);
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .feature-list li {
+      position: relative;
+      padding-left: 1.75rem;
+      font-size: 0.95rem;
+      color: var(--text-dark);
+    }
+
+    .feature-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: var(--accent-gold);
+      font-weight: bold;
+    }
+
+    /* QR Code Card */
+    .qr-banner {
+      background: var(--navy-dark);
+      color: #FFFFFF;
+      border-radius: 12px;
+      padding: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .qr-info {
+      max-width: 520px;
+    }
+
+    .qr-info h3 {
+      color: var(--accent-gold);
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .qr-code-img {
+      width: 140px;
+      height: 140px;
+      background: #FFFFFF;
+      padding: 8px;
+      border-radius: 8px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0F172A;
+      color: #94A3B8;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: #E2E8F0;
+      text-decoration: underline;
+    }
+
+    .disclaimer {
+      max-width: 800px;
+      margin: 1rem auto 0;
+      font-size: 0.75rem;
+      color: #64748B;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <div class="badge">100% Free Public Community Utility</div>
+    <h1>AEGIS</h1>
+    <div class="subhead">Senior Fraud Defense</div>
+    <p class="tagline">On-Device Scam Detection & Intake-Ready Evidence Dossiers for Older Adults and Protective Services</p>
+    
+    <div class="cta-group">
+      <a href="https://play.google.com/store/apps/details?id=com.dfheatlabs.aegis" class="btn btn-google">
+        Download on Google Play
+      </a>
+      <a href="https://onelink.to/aegisapp" class="btn btn-apple">
+        iOS / App Store (Pending)
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+    
+    <h2 class="section-title">Intercepting Deception at the Kitchen Table</h2>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Point & Scan</h3>
+        <p>Hold your phone camera over suspicious mail, contractor invoices, lottery claims, or utility cut-off warnings. No accounts, logins, or cloud uploads required.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Instant Threat Check</h3>
+        <p>Text is screened 100% locally on-device. Aegis analyzes high-pressure language, imposter markers, and artificial urgency before funds leave your account.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>The Intake Dossier</h3>
+        <p>Compiles a single-page PDF dossier with an 8-digit sync code (e.g. <code>RON-84920481</code>) for direct intake reporting to Pennsylvania Area Agencies on Aging or police.</p>
+      </div>
+    </div>
+
+    <div class="features-panel">
+      <h2>Built Specifically for Older Adults & Frontline Investigators</h2>
+      <ul class="feature-list">
+        <li><strong>Ultra-High Contrast Mode:</strong> Yellow-on-Black theme optimized for low-vision readability.</li>
+        <li><strong>Slow-Cadence Voice Readback:</strong> Integrated 0.40x speed TTS guidance for clear comprehension.</li>
+        <li><strong>8 PA County Routing:</strong> Tailored intake logic for Philadelphia, Allegheny, Montgomery, Bucks, Delaware, Chester, Lancaster, and Berks.</li>
+        <li><strong>Zero Credential Architecture:</strong> Never asks for passwords, Social Security numbers, or bank logins.</li>
+        <li><strong>Multi-Channel Intake Dispatch:</strong> Share dossiers via Direct Agency Email, SMS Safety Buddy, or AirPrint.</li>
+        <li><strong>Biometric Lock:</strong> Optional fingerprint or PIN lock keeps evidence files private on the device.</li>
+      </ul>
+    </div>
+
+    <div class="qr-banner">
+      <div class="qr-info">
+        <h3>Universal Download Link</h3>
+        <p>Scan this QR code from any smartphone camera to open the proper download store for Android or iOS directly.</p>
+      </div>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://onelink.to/aegisapp" alt="QR Code for Aegis App" class="qr-code-img" />
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Published by <strong>DF Heat Labs, LLC</strong> | Independent Technology Studio</p>
+    <p>Contact Product Desk: <a href="mailto:jason@dfheatlabs.com">jason@dfheatlabs.com</a> | <a href="https://jferg719.github.io/dfheatlabs-legal/aegis-privacy.html">Privacy Policy</a></p>
+    <p class="disclaimer">
+      DISCLAIMER: Aegis Senior Fraud Defense is an automated educational and intake compilation utility developed by DF Heat Labs LLC. Aegis does not provide formal legal, financial, or investigative counsel, nor does it guarantee interception of all fraud schemes. Aegis is an independent utility and is not an official government agency or emergency dispatch service.
+    </p>
+  </footer>
+
+</body>
+</html>
